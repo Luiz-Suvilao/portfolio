@@ -1,0 +1,60 @@
+@use '../../styles/variables';
+
+.container {
+  width: 100%;
+  padding-top: 10.25rem;
+
+  .content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+
+    .title {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      margin-top: 2.72rem;
+      text-align: center;
+    }
+
+    .projects {
+      margin-top: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+  }
+}
+
+.dark {
+  background-color: variables.$bg-dark;
+
+  .content {
+    .title {
+      color: variables.$title-dark;
+    }
+
+    .subtitle {
+      color: variables.$subtitle-dark;
+    }
+  }
+}
+
+.light {
+  background-color: variables.$bg-light;
+
+  .content {
+    .title {
+      color: variables.$title-light;
+    }
+
+    .subtitle {
+      color: variables.$subtitle-light;
+    }
+  }
+}
