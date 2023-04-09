@@ -8,6 +8,7 @@ import Main from '../components/Main';
 import Stacks from '../components/Stacks';
 import Projects from '../components/Projects';
 import AboutMe from '../components/AboutMe';
+import WorkExperience from "../components/WorkExperience";
 
 const Home = () => {
     const { isDarkTheme } = useTheme();
@@ -33,6 +34,8 @@ const Home = () => {
             <Projects projectsRef={projectsRef} isDarkTheme={isDarkTheme} />
 
             <AboutMe aboutRef={aboutRef} isDarkTheme={isDarkTheme} />
+            
+            <WorkExperience isDarkTheme={isDarkTheme} />
         </>
     );
 }

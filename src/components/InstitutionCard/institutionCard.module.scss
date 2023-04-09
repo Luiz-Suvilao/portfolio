@@ -1,0 +1,96 @@
+@use '../../styles/variables';
+
+.institution {
+  width: 45%;
+  padding-top: 5.25rem;
+  border-bottom: 1px solid variables.$subtitle-dark;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  .wrapperTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      font-size: 1.8rem;
+    }
+
+    .badge {
+      font-size: 1.1rem;
+      padding: 5px 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+  }
+
+  .wrapperInfo {
+    margin-top: 1.375rem;
+    display: flex;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+
+    .locale {
+      display: flex;
+
+      .building {
+        margin-right: 2.5rem;
+
+        svg {
+          font-size: 12px;
+        }
+      }
+
+      .local {
+        svg {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .period {
+      margin-left: auto;
+
+      svg {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.dark {
+  .wrapperInfo {
+    color: variables.$subtitle-dark;
+  }
+
+  .wrapperTitle {
+    .title {
+      color: variables.$title-dark;
+    }
+
+    .badge {
+      color: variables.$subtitle-dark;
+      background-color: variables.$card-bg-dark
+    }
+  }
+}
+
+.light {
+
+  .wrapperInfo {
+    color: variables.$subtitle-light;
+  }
+
+  .wrapperTitle {
+    .title {
+      color: variables.$title-light;
+    }
+
+    .badge {
+      background-color: variables.$badge-bg-light;
+      color: variables.$badge-light;
+    }
+  }
+}
