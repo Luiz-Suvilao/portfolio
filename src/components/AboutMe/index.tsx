@@ -1,12 +1,16 @@
+import { RefObject } from 'react';
+
 import styles from './aboutMe.module.scss';
 
 const AboutMe = ({
-    isDarkTheme
+    isDarkTheme,
+    aboutRef
 }: {
-    isDarkTheme: boolean
+    isDarkTheme: boolean,
+    aboutRef: RefObject<HTMLDivElement>
 }) => (
     <section className={`${styles.container} ${isDarkTheme ? styles.dark : styles.light}`}>
-        <div className={styles.content}>
+        <div ref={aboutRef} className={styles.content}>
             <h1 className={styles.title}>Sobre mim</h1>
             <p className={styles.subtitle}>
                 Bem, eu sou um entusiasta na programação, sempre disposto a aprender coisas novas.
