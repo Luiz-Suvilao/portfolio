@@ -1,7 +1,13 @@
-import '../styles/globals.scss'
+import { ThemeProviderWrapper } from '../hooks/theme';
+
+import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+      <ThemeProviderWrapper>
+        <Component {...pageProps} />
+      </ThemeProviderWrapper>
+  )
 }
 
 export default MyApp
