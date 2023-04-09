@@ -16,13 +16,13 @@ const InstitutionCard = ({
     locale: string;
     startAt: string;
     terminateAt: string;
-    period: string;
+    period?: string;
     title: string;
 }) => (
     <div className={`${styles.institution} ${isDarkTheme ? styles.dark : styles.light}`}>
         <div className={styles.wrapperTitle}>
             <h1 className={styles.title}>{title}</h1>
-            <div className={styles.badge}>{period}</div>
+            {period && (<div className={styles.badge}>{period}</div>)}
         </div>
 
         <div className={styles.wrapperInfo}>
