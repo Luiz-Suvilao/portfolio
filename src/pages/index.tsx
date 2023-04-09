@@ -8,9 +8,11 @@ import Main from '../components/Main';
 import Stacks from '../components/Stacks';
 import Projects from '../components/Projects';
 import AboutMe from '../components/AboutMe';
-import WorkExperience from "../components/WorkExperience";
-import Education from "../components/Education";
-import Footer from "../components/Footer";
+import WorkExperience from '../components/WorkExperience';
+import Education from '../components/Education';
+import Footer from '../components/Footer';
+
+import favicon from '../public/favicon.ico';
 
 const Home = () => {
     const { isDarkTheme } = useTheme();
@@ -21,6 +23,7 @@ const Home = () => {
         <>
             <Head>
                 <title>Portfolio | Luiz Filipe</title>
+                <link rel="shortcut icon" href={favicon.src} type="image/x-icon" />
             </Head>
 
             <Header
