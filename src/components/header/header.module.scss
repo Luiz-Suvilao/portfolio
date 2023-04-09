@@ -1,0 +1,40 @@
+@use '../../styles/variables';
+
+.container {
+  width: 100%;
+  padding: 2.5625rem 14.375rem 2.5625rem 11.0625rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .linkList {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.25rem;
+
+    li a:hover {
+      text-decoration: underline;
+    }
+
+    li a {
+      font-size: 1.25rem;
+      text-decoration: none;
+    }
+  }
+}
+
+.dark {
+  background: variables.$bg-dark;
+
+  .title {
+    color: variables.$title-dark;
+  }
+
+  .linkList {
+    li a {
+      color: variables.$subtitle-dark;
+    }
+  }
+}

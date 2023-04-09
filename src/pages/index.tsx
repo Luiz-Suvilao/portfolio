@@ -1,14 +1,15 @@
 import Head from 'next/head';
 
-const Home = () => {
-  return (
-      <>
+import Header from '../components/header';
+
+const Home = () => (
+    <>
         <Head>
-          <title>Portfolio</title>
+            <title>Portfolio</title>
         </Head>
-        <h1>Olá mundo</h1>
-      </>
-  )
-}
+
+        <Header />
+    </>
+);
 
 export default Home;
