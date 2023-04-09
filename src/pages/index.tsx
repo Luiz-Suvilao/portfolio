@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import Header from '../components/Header';
+import Main from '../components/Main';
 
 const Home = () => (
     <>
@@ -9,6 +10,8 @@ const Home = () => (
         </Head>
 
         <Header />
+
+        <Main />
     </>
 );
 
