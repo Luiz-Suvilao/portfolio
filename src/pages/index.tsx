@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Main from '../components/Main';
 import Stacks from '../components/Stacks';
 import Projects from '../components/Projects';
+import AboutMe from "../components/AboutMe";
 
 const Home = () => {
     const { isDarkTheme } = useTheme();
@@ -23,6 +24,8 @@ const Home = () => {
             <Stacks isDarkTheme={isDarkTheme} />
 
             <Projects isDarkTheme={isDarkTheme} />
+
+            <AboutMe isDarkTheme={isDarkTheme} />
         </>
     );
 }
