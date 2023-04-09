@@ -1,18 +1,24 @@
 import Head from 'next/head';
 
+import { useTheme } from '../hooks/theme';
+
 import Header from '../components/Header';
 import Main from '../components/Main';
 
-const Home = () => (
-    <>
-        <Head>
-            <title>Portfolio</title>
-        </Head>
+const Home = () => {
+    const { isDarkTheme } = useTheme();
 
-        <Header />
+    return (
+        <>
+            <Head>
+                <title>Portfolio</title>
+            </Head>
 
-        <Main />
-    </>
-);
+            <Header isDarkTheme={isDarkTheme} />
+
+            <Main isDarkTheme={isDarkTheme} />
+        </>
+    );
+}
 
 export default Home;

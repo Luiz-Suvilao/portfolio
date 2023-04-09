@@ -3,13 +3,14 @@ import Link from 'next/link';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import SwitchTheme from '../SwitchTheme';
-import { useTheme } from '../../hooks/theme';
 
 import styles from './header.module.scss';
 
-const Header = () => {
-    const { isDarkTheme } = useTheme();
-
+const Header = ({
+    isDarkTheme
+}: {
+    isDarkTheme: boolean
+}) => {
     return (
         <header className={`${styles.container} ${isDarkTheme ? styles.dark : styles.light}`}>
             <div className={styles.content}>
