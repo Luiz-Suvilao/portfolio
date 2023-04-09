@@ -38,3 +38,16 @@
     }
   }
 }
+
+.light {
+
+  .title {
+    color: variables.$title-light;
+  }
+
+  .linkList {
+    li a {
+      color: variables.$subtitle-light;
+    }
+  }
+}

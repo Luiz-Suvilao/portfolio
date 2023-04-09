@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
+import SwitchTheme from '../SwitchTheme';
 import { useTheme } from '../../hooks/theme';
 
 import styles from './header.module.scss';
@@ -42,6 +43,8 @@ const Header = () => {
                             <FaLinkedin />
                         </Link>
                     </li>
+
+                    <SwitchTheme />
                 </ul>
             </nav>
         </header>
