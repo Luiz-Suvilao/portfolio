@@ -4,6 +4,7 @@ import { useTheme } from '../hooks/theme';
 
 import Header from '../components/Header';
 import Main from '../components/Main';
+import Stacks from "../components/Stacks";
 
 const Home = () => {
     const { isDarkTheme } = useTheme();
@@ -17,6 +18,8 @@ const Home = () => {
             <Header isDarkTheme={isDarkTheme} />
 
             <Main isDarkTheme={isDarkTheme} />
+
+            <Stacks isDarkTheme={isDarkTheme} />
         </>
     );
 }
