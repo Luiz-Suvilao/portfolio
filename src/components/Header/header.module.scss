@@ -2,25 +2,31 @@
 
 .container {
   width: 100%;
-  padding: 2.5625rem 14.375rem 2.5625rem 11.0625rem;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .linkList {
+  .content {
+    max-width: 1280px;
+    margin: 0 auto;
     display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 1.25rem;
+    justify-content: space-between;
+    padding: 20px;
 
-    li a:hover {
-      text-decoration: underline;
-    }
+    .linkList {
+      display: flex;
+      align-items: center;
+      list-style: none;
 
-    li a {
-      font-size: 1.25rem;
-      text-decoration: none;
+      li:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      li a:hover {
+        text-decoration: underline;
+      }
+
+      li a {
+        font-size: 1.25rem;
+        text-decoration: none;
+      }
     }
   }
 }
