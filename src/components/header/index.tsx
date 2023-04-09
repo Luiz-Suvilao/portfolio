@@ -44,7 +44,9 @@ const Header = () => {
                         </Link>
                     </li>
 
-                    <SwitchTheme />
+                    <li>
+                        <SwitchTheme />
+                    </li>
                 </ul>
             </nav>
         </header>

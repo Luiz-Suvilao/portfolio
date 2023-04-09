@@ -7,7 +7,7 @@
   height: 25px;
 
   input[type="checkbox"] {
-    display: none;
+    visibility: hidden;
 
     &:checked + .switch:before {
       transform: translateX(25px);

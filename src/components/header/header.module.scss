@@ -51,3 +51,21 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
+
+    nav {
+      width: 100%;
+    }
+
+    .title {
+      display: none;
+    }
+
+    .linkList {
+      justify-content: space-around;
+    }
+  }
+}
