@@ -10,6 +10,7 @@ import Projects from '../components/Projects';
 import AboutMe from '../components/AboutMe';
 import WorkExperience from "../components/WorkExperience";
 import Education from "../components/Education";
+import Footer from "../components/Footer";
 
 const Home = () => {
     const { isDarkTheme } = useTheme();
@@ -39,6 +40,8 @@ const Home = () => {
             <WorkExperience isDarkTheme={isDarkTheme} />
 
             <Education isDarkTheme={isDarkTheme} />
+
+            <Footer isDarkTheme={isDarkTheme} />
         </>
     );
 }
