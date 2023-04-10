@@ -77,6 +77,8 @@
 
     .cta {
       a {
+        display: flex;
+        align-items: flex-start;
         color: variables.$subtitle-dark;
       }
     }
