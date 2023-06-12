@@ -11,6 +11,7 @@ import AboutMe from '../components/AboutMe';
 import WorkExperience from '../components/WorkExperience';
 import Education from '../components/Education';
 import Footer from '../components/Footer';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 import favicon from '../public/favicon.ico';
 
@@ -45,6 +46,8 @@ const Home = () => {
             <Education isDarkTheme={isDarkTheme} />
 
             <Footer isDarkTheme={isDarkTheme} />
+
+            <ScrollToTopButton isDarkTheme={isDarkTheme} />
         </>
     );
 }
