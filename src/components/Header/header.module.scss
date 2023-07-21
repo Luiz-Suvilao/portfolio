@@ -10,6 +10,14 @@
     justify-content: space-between;
     padding: 20px;
 
+    .backToHome {
+      text-decoration: none;
+
+      &:hover {
+        opacity:0.5;
+      }
+    }
+
     .linkList {
       display: flex;
       list-style: none;
@@ -39,7 +47,8 @@
   }
 
   .linkList {
-    li span, li a {
+    li span,
+    li a {
       color: variables.$subtitle-dark;
     }
   }
@@ -52,7 +61,8 @@
   }
 
   .linkList {
-    li span, li a {
+    li span,
+    li a {
       color: variables.$subtitle-light;
     }
   }
@@ -62,16 +72,18 @@
   .container {
     padding: 20px;
 
-    nav {
-      width: 100%;
-    }
+    .content {
+      nav {
+        width: 100%;
+      }
 
-    .title {
-      display: none;
-    }
+      .title {
+        display: none;
+      }
 
-    .linkList {
-      justify-content: space-around;
+      .linkList {
+        justify-content: space-around;
+      }
     }
   }
 }

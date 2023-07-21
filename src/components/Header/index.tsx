@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { useTheme } from '../../hooks/theme';
 
 import styles from './header.module.scss';
@@ -11,7 +13,9 @@ const Header = ({
     return (
         <header className={`${styles.container} ${isDarkTheme ? styles.dark : styles.light}`}>
             <div className={styles.content}>
-                <h1 className={styles.title}>LF</h1>
+                <Link className={styles.backToHome} href="/">
+                    <h1 className={styles.title}>LF</h1>
+                </Link>
 
                 <nav>
                     <ul className={styles.linkList}>
