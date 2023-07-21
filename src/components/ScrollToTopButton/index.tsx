@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
 
+import { useTheme } from '../../hooks/theme';
+
 import styles from './scrollToTopButton.module.scss';
 
-const ScrollToTopButton = ({
-    isDarkTheme
-}: {
-    isDarkTheme: boolean
-}) => {
+const ScrollToTopButton = () => {
+    const { isDarkTheme } = useTheme();
     const [visible, setVisible] = useState<boolean>(false);
 
     const goBackToTop = () => window.scrollTo({

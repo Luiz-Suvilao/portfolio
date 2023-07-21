@@ -20,7 +20,6 @@ import SwitchTheme from '../components/SwitchTheme';
 import favicon from '../public/favicon.ico';
 
 const Home = () => {
-    const { isDarkTheme } = useTheme();
     const projectsRef = useRef<HTMLDivElement>(null);
     const aboutRef = useRef<HTMLDivElement>(null);
 
@@ -54,21 +53,25 @@ const Home = () => {
                 listItem={listItem}
             />
 
-            <Main isDarkTheme={isDarkTheme} />
+            <Main />
 
-            <Stacks isDarkTheme={isDarkTheme} />
+            <Stacks />
 
-            <Projects projectsRef={projectsRef} isDarkTheme={isDarkTheme} />
+            <Projects
+                projectsRef={projectsRef}
+            />
 
-            <AboutMe aboutRef={aboutRef} isDarkTheme={isDarkTheme} />
+            <AboutMe
+                aboutRef={aboutRef}
+            />
 
-            <WorkExperience isDarkTheme={isDarkTheme} />
+            <WorkExperience />
 
-            <Education isDarkTheme={isDarkTheme} />
+            <Education />
 
-            <Footer isDarkTheme={isDarkTheme} />
+            <Footer />
 
-            <ScrollToTopButton isDarkTheme={isDarkTheme} />
+            <ScrollToTopButton />
         </>
     );
 }

@@ -1,27 +1,28 @@
-import styles from './education.module.scss';
+import { useTheme } from '../../hooks/theme';
+
 import InstitutionCard from "../InstitutionCard";
 
-const Education = ({
-    isDarkTheme
-}: {
-    isDarkTheme: boolean
-}) => (
-    <section className={`${styles.container} ${isDarkTheme ? styles.dark : styles.light}`}>
-        <div className={styles.content}>
-            <h1 className={styles.title}>Escolaridade</h1>
+import styles from './education.module.scss';
 
-            <div className={styles.educations}>
-                <InstitutionCard
-                    isDarkTheme={isDarkTheme}
-                    foundation="Uniasselvi"
-                    locale="CF, RJ"
-                    startAt="Fev 2023"
-                    terminateAt="Fev 2027"
-                    title="Bacharelado Eng. de Software"
-                />
+const Education = () => {
+    const { isDarkTheme } = useTheme();
+    return (
+        <section className={`${styles.container} ${isDarkTheme ? styles.dark : styles.light}`}>
+            <div className={styles.content}>
+                <h1 className={styles.title}>Escolaridade</h1>
+
+                <div className={styles.educations}>
+                    <InstitutionCard
+                        foundation="Uniasselvi"
+                        locale="CF, RJ"
+                        startAt="Fev 2023"
+                        terminateAt="Fev 2027"
+                        title="Bacharelado Eng. de Software"
+                    />
+                </div>
             </div>
-        </div>
-    </section>
-);
+        </section>
+    );
+}
 
 export default Education;
