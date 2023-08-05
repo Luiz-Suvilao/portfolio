@@ -1,0 +1,78 @@
+@use '../../styles/variables';
+
+.container {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .input {
+    position: relative;
+    font-weight: 500;
+    width: 302px;
+    height: 30px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+
+    &::placeholder {
+      opacity: 1;
+      transition: 0.2s;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+      transition: 0.2s;
+    }
+
+    &:focus { outline: none; }
+
+    &:focus ~ .bar {
+      width: 302px;
+      transition: 0.4s;
+    }
+
+    & ~ .bar {
+      position: relative;
+      display: inherit;
+      top: -2px;
+      width: 0;
+      height: 3px;
+      transition: 0.4s;
+    }
+
+    &:disabled {
+      border-color: #d8d8d8;
+      cursor: not-allowed;
+
+      &::placeholder {
+        color: #d8d8d8;
+      }
+    }
+  }
+}
+
+.dark {
+  color: variables.$title-dark;
+
+  & ~ .bar {
+    background-color: variables.$subtitle-dark;
+  }
+
+  &::placeholder {
+    color: variables.$title-dark;
+  }
+}
+
+.light {
+  color: variables.$title-light;
+
+  & ~ .bar {
+    background-color: variables.$subtitle-light;
+  }
+
+  &::placeholder {
+    color: variables.$title-light;
+  }
+}

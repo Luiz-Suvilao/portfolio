@@ -1,10 +1,9 @@
+import { useTheme } from '../../hooks/theme';
+
 import styles from './main.module.scss';
 
-const Main = ({
-    isDarkTheme
-}: {
-    isDarkTheme: boolean
-}) => {
+const Main = () => {
+    const { isDarkTheme } = useTheme();
     return (
         <>
             <main className={`${styles.container} ${isDarkTheme ? styles.dark : styles.light}`}>
