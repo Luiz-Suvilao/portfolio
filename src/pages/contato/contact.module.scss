@@ -48,6 +48,10 @@
         outline: none;
         transition: 0.3s all;
       }
+
+      .success {
+        color: variables.$badge-light;
+      }
     }
 
     .photo {

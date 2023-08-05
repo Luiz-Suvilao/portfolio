@@ -22,6 +22,7 @@ const Contato = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [renderSuccessMessage, setRenderSuccessMessage] = useState(false);
 
     const listItem = [
         <Link target="_blank" href="https://github.com/Luiz-Suvilao" key={1}>
@@ -31,60 +32,96 @@ const Contato = () => {
             <FaLinkedin />
         </Link>,
         <SwitchTheme key={3}/>
-  ];
+    ];
 
-  return (
-      <>
-          <Head>
-              <title>Portfolio | Contato</title>
-              <link rel="shortcut icon" href={favicon.src} type="image/x-icon" />
-          </Head>
+    const handleSubmit = async () => {
+        if ([email, name, message].includes('')) {
+            alert("Ooops! Verifique os campos e tente novamente :)");
+            return;
+        }
 
-          <Header
-              listItem={listItem}
-          />
+        const resp = await fetch('https://luizfilipe-portfolio.vercel.app/api/email/sendMessage', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name,
+                message,
+                email
+            })
+        });
 
-          <section className={`${styles.container} ${isDarkTheme ? styles.dark : styles.light}`}>
-              <div className={styles.content}>
-                  <form>
-                      <h1 className={styles.title}>Fale comigo!</h1>
-                      <Input
-                          label="Seu nome"
-                          placeholder="Seu nome"
-                          type="text"
-                          value={name}
-                          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
-                      />
+        if (resp.ok && resp.status === 200) {
+            setEmail('');
+            setMessage('');
+            setName('');
+            setRenderSuccessMessage(true);
 
-                      <Input
-                          label="Seu email"
-                          placeholder="Seu email"
-                          type="email"
-                          value={email}
-                          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                      />
+            setTimeout(() => {
+                setRenderSuccessMessage(false);
+            }, 7000);
+            return;
+        }
 
-                      <textarea
-                          placeholder="Digite sua mensagem..."
-                          value={message}
-                          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
-                      />
+        alert('Humm! Algo deu errado... Tente novamente mais tarde :/');
+    }
 
-                      <button type="button">Enviar</button>
-                  </form>
-                  <Image
-                      src={me}
-                      width={500}
-                      height={500}
-                      alt="Luiz Filipe segurando sua guitarra"
-                      className={styles.photo}
-                  />
+    return (
+        <>
+            <Head>
+                <title>Portfolio | Contato</title>
+                <link rel="shortcut icon" href={favicon.src} type="image/x-icon" />
+            </Head>
 
-              </div>
-          </section>
+            <Header
+                listItem={listItem}
+            />
 
-          <Footer />
-      </>
+            <section className={`${styles.container} ${isDarkTheme ? styles.dark : styles.light}`}>
+                <div className={styles.content}>
+                    <form>
+                        {renderSuccessMessage && (<p className={styles.success}>Mensagem enviada com sucesso!</p>)}
+                        <h1 className={styles.title}>Fale comigo!</h1>
+                        <Input
+                            label="Seu nome"
+                            placeholder="Seu nome"
+                            type="text"
+                            value={name}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+                        />
+
+                        <Input
+                            label="Seu email"
+                            placeholder="Seu email"
+                            type="email"
+                            value={email}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                        />
+
+                        <textarea
+                            placeholder="Digite sua mensagem..."
+                            value={message}
+                            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
+                        />
+
+                        <button onClick={() => handleSubmit()} type="button">Enviar</button>
+                    </form>
+
+                    <Image
+                        src={me}
+                        width={500}
+                        height={500}
+                        alt="Luiz Filipe segurando sua guitarra"
+                        className={styles.photo}
+                    />
+
+                </div>
+            </section>
+
+            <Footer />
+        </>
   );
 };
 
