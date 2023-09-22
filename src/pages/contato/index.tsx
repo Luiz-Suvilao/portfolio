@@ -16,6 +16,7 @@ import favicon from '../../public/favicon.ico';
 import me from '../../public/me.jpg';
 
 import styles from './contact.module.scss';
+import Loader from "../../components/Loader";
 
 const Contato = () => {
     const { isDarkTheme } = useTheme();
@@ -23,6 +24,7 @@ const Contato = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [renderSuccessMessage, setRenderSuccessMessage] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
     const listItem = [
         <Link target="_blank" href="https://github.com/Luiz-Suvilao" key={1}>
@@ -36,10 +38,11 @@ const Contato = () => {
 
     const handleSubmit = async () => {
         if ([email, name, message].includes('')) {
-            alert("Ooops! Verifique os campos e tente novamente :)");
+            alert("Ooops! Verifique os campos e tente novamente.");
             return;
         }
 
+        setIsSubmitting(true);
         const resp = await fetch('https://luizfilipe-portfolio.vercel.app/api/email/sendMessage', {
             method: 'POST',
             headers: {
@@ -51,7 +54,7 @@ const Contato = () => {
                 message,
                 email
             })
-        });
+        }).finally(() => setIsSubmitting(false));
 
         if (resp.ok && resp.status === 200) {
             setEmail('');
@@ -106,7 +109,10 @@ const Contato = () => {
                             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
                         />
 
-                        <button onClick={() => handleSubmit()} type="button">Enviar</button>
+                        {isSubmitting
+                            ? (<Loader />)
+                            : (<button onClick={() => handleSubmit()} type="button">Enviar</button>)
+                        }
                     </form>
 
                     <Image
