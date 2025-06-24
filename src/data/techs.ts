@@ -7,6 +7,8 @@ import Sass from '../public/icons/sass.svg';
 import Angular from '../public/icons/angular.svg';
 import PHP from '../public/icons/php.svg';
 import Laravel from '../public/icons/laravel.svg';
+import CSharp from '../public/icons/c-sharp.svg';
+import DotNet from '../public/icons/dot-net.svg';
 
 export const techs = [
     {
@@ -53,5 +55,15 @@ export const techs = [
         id: 9,
         image: Laravel,
         alt: 'laravel logo'
+    },
+    {
+        id: 10,
+        image: CSharp,
+        alt: 'C-Sharp logo'
+    },
+    {
+        id: 11,
+        image: DotNet,
+        alt: 'DotNet logo'
     }
 ];

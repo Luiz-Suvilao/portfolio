@@ -13,7 +13,7 @@ import Footer from "../../components/Footer";
 import Input from "../../components/Input";
 
 import favicon from '../../public/favicon.ico';
-import me from '../../public/me.jpg';
+import me from '../../public/me.png';
 
 import styles from './contact.module.scss';
 import Loader from "../../components/Loader";
