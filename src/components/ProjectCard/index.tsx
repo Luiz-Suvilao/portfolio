@@ -37,10 +37,12 @@ const ProjectCard = ({
                         Ver site
                     </Link>
 
-                    <Link target="_blank" href={linkCodeView}>
-                        <FaGithub  />
-                        Ver código
-                    </Link>
+                    {linkCodeView ? (
+                        <Link target="_blank" href={linkCodeView}>
+                            <FaGithub  />
+                            Ver código
+                        </Link>
+                    ) : <span>&nbsp;</span>}
                 </div>
             </div>
         </div>
