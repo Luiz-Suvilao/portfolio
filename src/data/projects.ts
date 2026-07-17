@@ -1,16 +1,16 @@
-import Wedding from '../public/preview-projects/wdding-invite.png';
 import AG from '../public/preview-projects/a-g.png';
 import Calc from '../public/preview-projects/calculadora.png';
 import Task from '../public/preview-projects/tarefas.png';
+import LojaPreview from '../public/preview-projects/loja_preview.png';
 
 export const projects = [
     {
         id: 1,
-        title: 'Convite de casamento',
-        description: 'Esse é um projeto pessoal, do meu casamento, o convite foi feito usando Next.js e Sass, o site é responsivo e possui um formulário para confirmação de presença.',
-        linkView: 'https://wedding-invite-yyan.vercel.app/',
+        title: 'Loja Online MAG Seguros',
+        description: 'Esse é o projeto que eu venho atuando a mais de 5 anos. Sigo atuando nos canais de venda da MAG Seguros até os dias atuais.',
+        linkView: 'https://loja.mag.com.br/magpravoce',
         linkCodeView: '',
-        imagePreview: Wedding
+        imagePreview: LojaPreview
     },
     {
         id: 2,
