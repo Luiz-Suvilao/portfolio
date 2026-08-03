@@ -1,45 +1,72 @@
-@use '../../styles/variables';
+.container {
 
-.toggleSwitch {
+  width: 58px;
+  height: 32px;
+
+  border: none;
+  cursor: pointer;
+
+  border-radius: 999px;
+
   position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 25px;
 
-  input[type="checkbox"] {
-    visibility: hidden;
+  background: rgba(255,255,255,.08);
 
-    &:checked + .switch:before {
-      transform: translateX(25px);
-      background-color: variables.$bg-dark;
-    }
+  backdrop-filter: blur(10px);
 
-    &:checked + .switch {
-      background-color: variables.$subtitle-dark;
-    }
+  transition: .3s;
+
+  padding: 0;
+
+  &:hover{
+
+    background: rgba(255,255,255,.12);
+
   }
 
-  .switch {
-    position: absolute;
-    cursor: pointer;
-    background-color: #ccc;
-    border-radius: 25px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: background-color 0.2s ease;
+}
 
-    &:before {
-      position: absolute;
-      content: "";
-      left: 2px;
-      top: 2px;
-      width: 21px;
-      height: 21px;
-      background-color: #aaa;
-      border-radius: 50%;
-      transition: transform 0.3s ease;
-    }
+.thumb{
+
+  width:26px;
+  height:26px;
+
+  border-radius:50%;
+
+  position:absolute;
+
+  top:3px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transition:.35s cubic-bezier(.4,0,.2,1);
+
+  svg{
+
+    font-size:15px;
+
   }
+
+}
+
+.dark{
+
+  left:3px;
+
+  background:#18181b;
+
+  color:#f8fafc;
+
+}
+
+.light{
+
+  left:29px;
+
+  background:#f8fafc;
+
+  color:#18181b;
+
 }

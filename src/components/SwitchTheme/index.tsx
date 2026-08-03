@@ -1,18 +1,26 @@
-import { useTheme } from '../../hooks/theme';
+import { FiMoon, FiSun } from "react-icons/fi";
 
-import styles from './SwitchTheme.module.scss'
+import { useTheme } from "../../hooks/theme";
 
-const SwitchTheme = () => {
+import styles from "./SwitchTheme.module.scss";
+
+export default function SwitchTheme() {
+
     const { isDarkTheme, toggleTheme } = useTheme();
 
     return (
-        <>
-            <label className={styles.toggleSwitch}>
-                <input type="checkbox" checked={isDarkTheme} onChange={toggleTheme} />
-                <span className={styles.switch} />
-            </label>
-        </>
+        <button
+            className={styles.container}
+            onClick={toggleTheme}
+            aria-label="Alterar tema"
+        >
+            <div
+                className={`${styles.thumb} ${
+                    isDarkTheme ? styles.dark : styles.light
+                }`}
+            >
+                {isDarkTheme ? <FiMoon /> : <FiSun />}
+            </div>
+        </button>
     );
 }
-
-export default SwitchTheme;

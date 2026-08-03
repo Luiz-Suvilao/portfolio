@@ -1,39 +1,73 @@
 import {
     createContext,
-    useContext,
-    useState,
-    useMemo,
     useCallback,
-    ReactNode
-} from 'react';
+    useContext,
+    useEffect,
+    useMemo,
+    useState,
+    ReactNode,
+} from "react";
 
-interface IThemeContext {
+interface ThemeContextData {
     isDarkTheme: boolean;
     toggleTheme(): void;
 }
 
-interface IThemeProvider {
+const ThemeContext = createContext({} as ThemeContextData);
+
+interface Props {
     children: ReactNode;
 }
 
-const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
+export function ThemeProviderWrapper({ children }: Props) {
+    const [isDarkTheme, setIsDarkTheme] = useState(true);
 
-const ThemeProviderWrapper = ({ children }: IThemeProvider) => {
-    const [ isDarkTheme, setIsDarkTheme] = useState<boolean>(true);
+    useEffect(() => {
+        const storedTheme = localStorage.getItem("theme");
 
-    const toggleTheme = useCallback(() => setIsDarkTheme(!isDarkTheme), [isDarkTheme]);
+        if (storedTheme) {
+            setIsDarkTheme(storedTheme === "dark");
+            return;
+        }
 
-    const themeProviderValue = useMemo(() => ({isDarkTheme, toggleTheme}), [isDarkTheme, toggleTheme]);
+        const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+        ).matches;
+
+        setIsDarkTheme(prefersDark);
+    }, []);
+
+    useEffect(() => {
+        document.documentElement.setAttribute(
+            "data-theme",
+            isDarkTheme ? "dark" : "light"
+        );
+
+        localStorage.setItem(
+            "theme",
+            isDarkTheme ? "dark" : "light"
+        );
+    }, [isDarkTheme]);
+
+    const toggleTheme = useCallback(() => {
+        setIsDarkTheme((old) => !old);
+    }, []);
+
+    const value = useMemo(
+        () => ({
+            isDarkTheme,
+            toggleTheme,
+        }),
+        [isDarkTheme, toggleTheme]
+    );
 
     return (
-        <ThemeContext.Provider value={themeProviderValue}>
+        <ThemeContext.Provider value={value}>
             {children}
         </ThemeContext.Provider>
     );
 }
 
-function useTheme(): IThemeContext {
+export function useTheme() {
     return useContext(ThemeContext);
 }
-
-export { ThemeProviderWrapper, useTheme };
