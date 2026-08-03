@@ -33,12 +33,12 @@ const ScrollToTopButton = () => {
 
     return (
         <button
-            className={`${styles.button} ${isDarkTheme ? styles.dark : styles.light}`}
+            className={`${styles.button} ${
+                isDarkTheme ? styles.dark : styles.light
+            }`}
             onClick={goBackToTop}
         >
-            <FaArrowUp
-                color={`${isDarkTheme ? '' : '#fff'}`}
-            />
+            <FaArrowUp />
         </button>
     )
 };
