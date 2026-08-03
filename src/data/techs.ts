@@ -1,69 +1,140 @@
-import HTML from '../public/icons/html.svg';
-import CSS from '../public/icons/css.svg';
-import JS from '../public/icons/js.svg';
-import React from '../public/icons/react.svg';
-import Redux from '../public/icons/redux.svg';
-import Sass from '../public/icons/sass.svg';
-import Angular from '../public/icons/angular.svg';
-import PHP from '../public/icons/php.svg';
-import Laravel from '../public/icons/laravel.svg';
-import CSharp from '../public/icons/c-sharp.svg';
-import DotNet from '../public/icons/dot-net.svg';
+import {
+    SiAngular,
+    SiCsharp,
+    SiDocker,
+    SiDotnet,
+    SiGit,
+    SiHtml5,
+    SiJavascript,
+    SiLaravel,
+    SiMysql,
+    SiPhp,
+    SiReact,
+    SiRedux,
+    SiSass,
+    SiTypescript,
+    SiCss3
+} from "react-icons/si";
 
 export const techs = [
     {
         id: 1,
-        image: HTML,
-        alt: 'html logo'
+        name: "React",
+        icon: SiReact,
+        color: "#61DAFB",
+        category: "Frontend",
+        experience: "4+ anos",
     },
     {
         id: 2,
-        image: CSS,
-        alt: 'css logo'
+        name: "Angular",
+        icon: SiAngular,
+        color: "#DD0031",
+        category: "Frontend",
+        experience: "3+ anos",
     },
     {
         id: 3,
-        image: JS,
-        alt: 'javascript logo'
+        name: "TypeScript",
+        icon: SiTypescript,
+        color: "#3178C6",
+        category: "Frontend",
+        experience: "4+ anos",
     },
     {
         id: 4,
-        image: React,
-        alt: 'react logo'
+        name: "JavaScript",
+        icon: SiJavascript,
+        color: "#F7DF1E",
+        category: "Frontend",
+        experience: "6+ anos",
     },
     {
         id: 5,
-        image: Redux,
-        alt: 'redux logo'
+        name: "HTML5",
+        icon: SiHtml5,
+        color: "#E34F26",
+        category: "Frontend",
+        experience: "6+ anos",
     },
     {
         id: 6,
-        image: Sass,
-        alt: 'sass logo'
+        name: "CSS3",
+        icon: SiCss3,
+        color: "#1572B6",
+        category: "Frontend",
+        experience: "6+ anos",
     },
     {
         id: 7,
-        image: Angular,
-        alt: 'angular logo'
+        name: "Sass",
+        icon: SiSass,
+        color: "#CC6699",
+        category: "Frontend",
+        experience: "5+ anos",
     },
     {
         id: 8,
-        image: PHP,
-        alt: 'php logo'
+        name: "Redux",
+        icon: SiRedux,
+        color: "#764ABC",
+        category: "Frontend",
+        experience: "4+ anos",
     },
     {
         id: 9,
-        image: Laravel,
-        alt: 'laravel logo'
+        name: "PHP",
+        icon: SiPhp,
+        color: "#777BB4",
+        category: "Backend",
+        experience: "6+ anos",
     },
     {
         id: 10,
-        image: CSharp,
-        alt: 'C-Sharp logo'
+        name: "Laravel",
+        icon: SiLaravel,
+        color: "#FF2D20",
+        category: "Backend",
+        experience: "5+ anos",
     },
     {
         id: 11,
-        image: DotNet,
-        alt: 'DotNet logo'
-    }
+        name: "C#",
+        icon: SiCsharp,
+        color: "#68217A",
+        category: "Backend",
+        experience: "3+ anos",
+    },
+    {
+        id: 12,
+        name: ".NET",
+        icon: SiDotnet,
+        color: "#512BD4",
+        category: "Backend",
+        experience: "3+ anos",
+    },
+    {
+        id: 13,
+        name: "Docker",
+        icon: SiDocker,
+        color: "#2496ED",
+        category: "DevOps",
+        experience: "2+ anos",
+    },
+    {
+        id: 14,
+        name: "Git",
+        icon: SiGit,
+        color: "#F05032",
+        category: "Ferramenta",
+        experience: "6+ anos",
+    },
+    {
+        id: 15,
+        name: "MySQL",
+        icon: SiMysql,
+        color: "#4479A1",
+        category: "Banco de Dados",
+        experience: "6+ anos",
+    },
 ];
