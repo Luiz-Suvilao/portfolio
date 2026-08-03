@@ -72,35 +72,6 @@ export const projects = [
 
         featured: false,
 
-        title: "Calculadora Penal",
-
-        company: "Projeto Pessoal",
-
-        role: "Full Stack Developer",
-
-        period: "2023",
-
-        description:
-            "Aplicação criada para automatizar o cálculo de penas em servidores GTA RP, reduzindo erros manuais e agilizando o trabalho da equipe policial.",
-
-        technologies: [
-            "React",
-            "TypeScript",
-            "Firebase",
-        ],
-
-        website: "https://newcity-calculadora-penal.netlify.app/",
-
-        github: "https://github.com/Luiz-Suvilao/calculadora_penal",
-
-        image: Calc,
-    },
-
-    {
-        id: 4,
-
-        featured: false,
-
         title: "Tasks",
 
         company: "Projeto Pessoal",

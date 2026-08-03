@@ -23,7 +23,7 @@ export const techs = [
         icon: SiReact,
         color: "#61DAFB",
         category: "Frontend",
-        experience: "4+ anos",
+        experience: "5+ anos",
     },
     {
         id: 2,
@@ -31,7 +31,7 @@ export const techs = [
         icon: SiAngular,
         color: "#DD0031",
         category: "Frontend",
-        experience: "3+ anos",
+        experience: "5+ anos",
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ export const techs = [
         icon: SiTypescript,
         color: "#3178C6",
         category: "Frontend",
-        experience: "4+ anos",
+        experience: "5+ anos",
     },
     {
         id: 4,
@@ -47,7 +47,7 @@ export const techs = [
         icon: SiJavascript,
         color: "#F7DF1E",
         category: "Frontend",
-        experience: "6+ anos",
+        experience: "5+ anos",
     },
     {
         id: 5,
@@ -55,7 +55,7 @@ export const techs = [
         icon: SiHtml5,
         color: "#E34F26",
         category: "Frontend",
-        experience: "6+ anos",
+        experience: "5+ anos",
     },
     {
         id: 6,
@@ -63,7 +63,7 @@ export const techs = [
         icon: SiCss3,
         color: "#1572B6",
         category: "Frontend",
-        experience: "6+ anos",
+        experience: "5+ anos",
     },
     {
         id: 7,
@@ -79,7 +79,7 @@ export const techs = [
         icon: SiRedux,
         color: "#764ABC",
         category: "Frontend",
-        experience: "4+ anos",
+        experience: "5+ anos",
     },
     {
         id: 9,
@@ -87,7 +87,7 @@ export const techs = [
         icon: SiPhp,
         color: "#777BB4",
         category: "Backend",
-        experience: "6+ anos",
+        experience: "5+ anos",
     },
     {
         id: 10,
@@ -103,7 +103,7 @@ export const techs = [
         icon: SiCsharp,
         color: "#68217A",
         category: "Backend",
-        experience: "3+ anos",
+        experience: "5+ anos",
     },
     {
         id: 12,
@@ -111,7 +111,7 @@ export const techs = [
         icon: SiDotnet,
         color: "#512BD4",
         category: "Backend",
-        experience: "3+ anos",
+        experience: "5+ anos",
     },
     {
         id: 13,
@@ -119,7 +119,7 @@ export const techs = [
         icon: SiDocker,
         color: "#2496ED",
         category: "DevOps",
-        experience: "2+ anos",
+        experience: "5+ anos",
     },
     {
         id: 14,
@@ -127,7 +127,7 @@ export const techs = [
         icon: SiGit,
         color: "#F05032",
         category: "Ferramenta",
-        experience: "6+ anos",
+        experience: "5+ anos",
     },
     {
         id: 15,
@@ -135,6 +135,6 @@ export const techs = [
         icon: SiMysql,
         color: "#4479A1",
         category: "Banco de Dados",
-        experience: "6+ anos",
+        experience: "5+ anos",
     },
 ];
