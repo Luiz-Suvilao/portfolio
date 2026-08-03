@@ -1,12 +1,49 @@
-// dark
-$bg-dark: #191919;
-$title-dark: #D9D9D9;
-$subtitle-dark: #A7A7A7;
-$card-bg-dark: #363636;
+// =========================
+// DARK
+// =========================
 
-// light
-$bg-light: #fff;
-$title-light: #42446E;
-$subtitle-light: #666666;
+$bg-dark: #191919;
+$surface-dark: #242424;
+$surface-dark-hover: #2c2c2c;
+
+$title-dark: #F5F5F5;
+$subtitle-dark: #B4B4B4;
+
+$card-bg-dark: #202020;
+$border-dark: rgba(255,255,255,.08);
+
+// =========================
+// LIGHT
+// =========================
+
+$bg-light: #ffffff;
+$surface-light: #f8fafc;
+$surface-light-hover: #f1f5f9;
+
+$title-light: #2B3553;
+$subtitle-light: #64748B;
+
+$card-bg-light: #ffffff;
+$border-light: rgba(15,23,42,.08);
+
+// =========================
+// PRIMARY
+// =========================
+
+$primary: #2563EB;
+$primary-hover: #1D4ED8;
+$primary-light: #DBEAFE;
+
+// =========================
+// SUCCESS
+// =========================
+
 $badge-light: #018C0F;
 $badge-bg-light: #D7FFE0;
+
+// =========================
+// SHADOWS
+// =========================
+
+$shadow-light: 0 10px 30px rgba(0,0,0,.08);
+$shadow-dark: 0 15px 40px rgba(0,0,0,.30);
