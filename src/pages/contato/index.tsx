@@ -1,134 +1,234 @@
-import React, { useState } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import Image from 'next/image'
+import React, { useState } from "react";
+import Head from "next/head";
+import Link from "next/link";
 
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import {
+    FaEnvelope,
+    FaGithub,
+    FaLinkedin,
+    FaMapMarkerAlt
+} from "react-icons/fa";
 
-import { useTheme } from '../../hooks/theme';
+import { useTheme } from "../../hooks/theme";
 
-import Header from '../../components/Header';
-import SwitchTheme from '../../components/SwitchTheme';
+import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Loader from "../../components/Loader";
 import Input from "../../components/Input";
 
-import favicon from '../../public/favicon.ico';
-import me from '../../public/me.png';
+import favicon from "../../public/favicon.ico";
 
-import styles from './contact.module.scss';
-import Loader from "../../components/Loader";
+import styles from "./contact.module.scss";
 
 const Contato = () => {
+
     const { isDarkTheme } = useTheme();
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const [renderSuccessMessage, setRenderSuccessMessage] = useState(false);
-    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-    const listItem = [
-        <Link target="_blank" href="https://github.com/Luiz-Suvilao" key={1}>
-            <FaGithub />
-        </Link>,
-        <Link target="_blank" href="https://www.linkedin.com/in/luiz-filipe-da-silva-de-jesus-490a02182/" key={2}>
-            <FaLinkedin />
-        </Link>,
-        <SwitchTheme key={3}/>
-    ];
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
 
-    const handleSubmit = async () => {
-        if ([email, name, message].includes('')) {
-            alert("Ooops! Verifique os campos e tente novamente.");
+    const [success, setSuccess] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    async function handleSubmit() {
+
+        if (!name || !email || !message) {
+            alert("Preencha todos os campos.");
             return;
         }
 
         setIsSubmitting(true);
-        const resp = await fetch('https://luizfilipe-portfolio.vercel.app/api/email/sendMessage', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name,
-                message,
-                email
-            })
-        }).finally(() => setIsSubmitting(false));
 
-        if (resp.ok && resp.status === 200) {
-            setEmail('');
-            setMessage('');
-            setName('');
-            setRenderSuccessMessage(true);
+        try {
+
+            const response = await fetch("/api/email/sendMessage", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    message
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error();
+            }
+
+            setSuccess(true);
+
+            setName("");
+            setEmail("");
+            setMessage("");
 
             setTimeout(() => {
-                setRenderSuccessMessage(false);
-            }, 7000);
-            return;
+
+                setSuccess(false);
+
+            }, 5000);
+
+        } catch {
+
+            alert("Não foi possível enviar sua mensagem.");
+
+        } finally {
+
+            setIsSubmitting(false);
+
         }
 
-        alert('Humm! Algo deu errado... Tente novamente mais tarde :/');
     }
 
     return (
         <>
             <Head>
-                <title>Portfolio | Contato</title>
-                <link rel="shortcut icon" href={favicon.src} type="image/x-icon" />
+                <title>Contato | Luiz Filipe</title>
+                <link
+                    rel="shortcut icon"
+                    href={favicon.src}
+                    type="image/x-icon"
+                />
             </Head>
 
-            <Header
-                listItem={listItem}
-            />
+            <Header contactView />
 
-            <section className={`${styles.container} ${isDarkTheme ? styles.dark : styles.light}`}>
+            <section
+                className={`${styles.container} ${
+                    isDarkTheme ? styles.dark : styles.light
+                }`}
+            >
+
                 <div className={styles.content}>
-                    <form>
-                        {renderSuccessMessage && (<p className={styles.success}>Mensagem enviada com sucesso!</p>)}
-                        <h1 className={styles.title}>Fale comigo!</h1>
+
+                    <aside className={styles.left}>
+
+                        <span className={styles.badge}>
+                            Disponível para oportunidades
+                        </span>
+
+                        <h1>
+                            Vamos conversar.
+                        </h1>
+
+                        <p>
+                            Estou disponível para oportunidades,
+                            freelas e novos desafios.
+                            Se você tem um projeto ou deseja
+                            conversar sobre tecnologia, entre
+                            em contato.
+                        </p>
+
+                        <div className={styles.info}>
+
+                            <a href="mailto:luizfilipe.tech@gmail.com">
+
+                                <FaEnvelope />
+
+                                luizfilipe.tech@gmail.com
+
+                            </a>
+
+                            <span>
+
+                                <FaMapMarkerAlt />
+
+                                Rio de Janeiro • Brasil
+
+                            </span>
+
+                        </div>
+
+                        <div className={styles.socials}>
+
+                            <Link
+                                href="https://github.com/Luiz-Suvilao"
+                                target="_blank"
+                            >
+
+                                <FaGithub />
+
+                            </Link>
+
+                            <Link
+                                href="https://www.linkedin.com/in/luiz-filipe-da-silva-de-jesus-490a02182/"
+                                target="_blank"
+                            >
+
+                                <FaLinkedin />
+
+                            </Link>
+
+                        </div>
+
+                    </aside>
+
+                    <div className={styles.formCard}>
+
+                        {success && (
+                            <div className={styles.success}>
+                                Mensagem enviada com sucesso 🚀
+                            </div>
+                        )}
+
                         <Input
-                            label="Seu nome"
+                            label="Nome"
                             placeholder="Seu nome"
                             type="text"
                             value={name}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+                            onChange={(e) =>
+                                setName(e.target.value)
+                            }
                         />
 
                         <Input
-                            label="Seu email"
+                            label="Email"
                             placeholder="Seu email"
                             type="email"
                             value={email}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                            onChange={(e) =>
+                                setEmail(e.target.value)
+                            }
                         />
+
+                        <label className={styles.label}>
+                            Mensagem
+                        </label>
 
                         <textarea
-                            placeholder="Digite sua mensagem..."
+                            placeholder="Conte um pouco sobre seu projeto..."
                             value={message}
-                            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
+                            onChange={(e) =>
+                                setMessage(e.target.value)
+                            }
                         />
 
-                        {isSubmitting
-                            ? (<Loader />)
-                            : (<button onClick={() => handleSubmit()} type="button">Enviar</button>)
-                        }
-                    </form>
+                        <button
+                            onClick={handleSubmit}
+                            disabled={isSubmitting}
+                        >
 
-                    <Image
-                        src={me}
-                        width={500}
-                        height={500}
-                        alt="Luiz Filipe segurando sua guitarra"
-                        className={styles.photo}
-                    />
+                            {isSubmitting ? (
+                                <Loader />
+                            ) : (
+                                "Enviar mensagem"
+                            )}
+
+                        </button>
+
+                    </div>
 
                 </div>
+
             </section>
 
             <Footer />
+
         </>
-  );
+    );
+
 };
 
 export default Contato;

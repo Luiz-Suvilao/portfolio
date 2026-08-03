@@ -14,13 +14,15 @@ import styles from "./header.module.scss";
 gsap.registerPlugin(ScrollTrigger);
 
 interface HeaderProps {
-	projectsRef: React.RefObject<HTMLDivElement>;
-	aboutRef: React.RefObject<HTMLDivElement>;
+	projectsRef?: React.RefObject<HTMLDivElement>;
+	aboutRef?: React.RefObject<HTMLDivElement>;
+	contactView?: boolean
 }
 
 const Header = ({
     projectsRef,
-    aboutRef
+    aboutRef,
+	contactView
 }: HeaderProps) => {
 	const {isDarkTheme} = useTheme();
 
@@ -91,35 +93,33 @@ const Header = ({
 
 					<ul className={styles.menu}>
 
-						<li className={styles.menuItem}>
-							<button
-								onClick={() =>
-									projectsRef.current?.scrollIntoView({
-										behavior: "smooth"
-									})
-								}
-							>
-								Projetos
-							</button>
-						</li>
-
-						<li className={styles.menuItem}>
-							<button
-								onClick={() =>
-									aboutRef.current?.scrollIntoView({
-										behavior: "smooth"
-									})
-								}
-							>
-								Sobre
-							</button>
-						</li>
-
-						<li className={styles.menuItem}>
-							<Link href="/contato">
-								Contato
-							</Link>
-						</li>
+						{contactView ? null : (
+							<>
+								<li className={styles.menuItem}>
+									<button
+										onClick={() => projectsRef.current?.scrollIntoView({
+											behavior: "smooth"
+										})}
+									>
+										Projetos
+									</button>
+								</li>
+								<li className={styles.menuItem}>
+									<button
+										onClick={() => aboutRef.current?.scrollIntoView({
+											behavior: "smooth"
+										})}
+									>
+										Sobre
+									</button>
+								</li>
+								<li className={styles.menuItem}>
+									<Link href="/contato">
+										Contato
+									</Link>
+								</li>
+							</>
+						)}
 
 						<li className={styles.menuItem}>
 							<Link
