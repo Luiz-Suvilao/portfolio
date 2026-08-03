@@ -11,12 +11,31 @@ body,
   height: 100%;
 
   font-family: Rachana, sans-serif;
+
+  scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar { width: 5px; }
+/* Firefox */
 
-::-webkit-scrollbar-track { background: #f1f1f1; }
+html {
+  scrollbar-width: thin;
+}
 
-::-webkit-scrollbar-thumb { background: #888; border-radius: 20px; }
+/* Chrome / Edge / Safari */
 
-::-webkit-scrollbar-thumb:hover { background: #555; }
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  transition: .3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  transition: .3s;
+}
