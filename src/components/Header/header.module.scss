@@ -4,7 +4,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   height: 72px;
 
   z-index: 999;
@@ -18,10 +17,11 @@
           background .3s ease,
           border-color .3s ease,
           box-shadow .3s ease;
+  width: 100%;
 }
 
 .content {
-  max-width: 1200px;
+  width: 100%;
   height: 100%;
 
   margin: 0 auto;
@@ -158,7 +158,7 @@
 
 .dark {
 
-  background: rgba(10, 10, 12, .72);
+  background: #191919;
 
   .logo {
 
