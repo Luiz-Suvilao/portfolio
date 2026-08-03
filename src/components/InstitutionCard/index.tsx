@@ -1,49 +1,99 @@
-import { FaBuilding, FaMapMarker, FaCalendar } from 'react-icons/fa';
+import {
+    FaBuilding,
+    FaCalendarAlt,
+    FaMapMarkerAlt
+} from "react-icons/fa";
 
-import { useTheme } from '../../hooks/theme';
+import { useTheme } from "../../hooks/theme";
 
-import styles from './institutionCard.module.scss';
+import styles from "./institutionCard.module.scss";
 
-const InstitutionCard = ({
-    locale,
-    startAt,
-    terminateAt,
-    foundation,
-    period,
-    title
-}: {
-    foundation: string;
-    locale: string;
-    startAt: string;
-    terminateAt: string;
-    period?: string;
-    title: string;
-}) => {
-    const { isDarkTheme } = useTheme();
-    return (
-        <div className={`${styles.institution} ${isDarkTheme ? styles.dark : styles.light}`}>
-            <div className={styles.wrapperTitle}>
-                <h1 className={styles.title}>{title}</h1>
-                {period && (<div className={styles.badge}>{period}</div>)}
-            </div>
-
-            <div className={styles.wrapperInfo}>
-                <div className={styles.locale}>
-                    <div className={styles.building}>
-                        <FaBuilding /> {foundation}
-                    </div>
-
-                    <div className={styles.local}>
-                        <FaMapMarker /> {locale}
-                    </div>
-                </div>
-
-                <div className={styles.period}>
-                    <FaCalendar /> {startAt} - {terminateAt}
-                </div>
-            </div>
-        </div>
-    );
+interface Props{
+    company:string;
+    client:string;
+    role:string;
+    location:string;
+    startAt:string;
+    endAt:string;
+    type:string;
+    technologies:string[];
+    description:string;
 }
 
-export default InstitutionCard;
+export default function InstitutionCard({
+
+                                            company,
+                                            client,
+                                            role,
+                                            location,
+                                            startAt,
+                                            endAt,
+                                            type,
+                                            technologies,
+                                            description
+
+                                        }:Props){
+
+    const {isDarkTheme}=useTheme();
+
+    return(
+
+        <article
+            className={`${styles.card}
+            ${isDarkTheme ? styles.dark : styles.light}`}
+        >
+
+            <span className={styles.dot}></span>
+
+            <div className={styles.header}>
+
+                <div>
+
+                    <h3>{role}</h3>
+
+                    <span>{company}</span>
+
+                </div>
+
+            </div>
+
+            <div className={styles.info}>
+
+                <span>
+                    <FaBuilding/>
+                    {client}
+                </span>
+
+                <span>
+                    <FaMapMarkerAlt/>
+                    {location}
+                </span>
+
+                <span>
+                    <FaCalendarAlt/>
+                    {startAt} • {endAt}
+                </span>
+
+            </div>
+
+            <p>
+                {description}
+            </p>
+
+            <div className={styles.techs}>
+
+                {technologies.map((tech)=>(
+
+                    <span key={tech}>
+                        {tech}
+                    </span>
+
+                ))}
+
+            </div>
+
+        </article>
+
+    );
+
+}

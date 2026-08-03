@@ -1,45 +1,94 @@
-@use '../../styles/variables';
+@use "../../styles/variables";
 
 .container {
   width: 100%;
-  padding-top: 5.25rem;
+  padding: 8rem 2rem;
+}
 
-  .content {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 20px;
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-    .title {
-      font-size: 3rem;
-      text-align: center;
-    }
+.badge {
+  display: inline-block;
 
-    .jobs {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+  padding: .45rem 1rem;
+
+  border-radius: 999px;
+
+  background: rgba(37,99,235,.12);
+
+  color: #2563eb;
+
+  font-weight: 600;
+
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: clamp(2.5rem,5vw,3.5rem);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  max-width: 700px;
+  line-height: 1.8;
+  margin-bottom: 4rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    left: 13px;
+
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background: rgba(37,99,235,.25);
   }
 }
 
 .dark {
-  background-color: variables.$bg-dark;
 
-  .content {
-    .title {
-      color: variables.$title-dark;
-    }
+  background: variables.$bg-dark;
+
+  .title {
+    color: variables.$title-dark;
   }
+
+  .subtitle {
+    color: variables.$subtitle-dark;
+  }
+
 }
 
 .light {
-  background-color: variables.$bg-light;
 
-  .content {
-    .title {
-      color: variables.$title-light;
-    }
+  background: variables.$bg-light;
+
+  .title {
+    color: variables.$title-light;
   }
+
+  .subtitle {
+    color: variables.$subtitle-light;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .container{
+    padding:6rem 1rem;
+  }
+
 }
