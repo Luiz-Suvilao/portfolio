@@ -29,7 +29,9 @@ const Home = () => {
                 aboutRef={aboutRef}
             />
 
-            <Main />
+            <Main
+                projectsRef={projectsRef}
+            />
 
             <Stacks />
 
