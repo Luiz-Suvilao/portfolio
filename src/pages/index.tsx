@@ -35,9 +35,7 @@ const Home = () => {
 
             <Stacks />
 
-            <Projects
-                projectsRef={projectsRef}
-            />
+            <Projects sectionRef={projectsRef} />
 
             <AboutMe
                 aboutRef={aboutRef}

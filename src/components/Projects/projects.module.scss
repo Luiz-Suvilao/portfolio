@@ -1,60 +1,98 @@
-@use '../../styles/variables';
+@use "../../styles/variables";
 
 .container {
   width: 100%;
-  padding-top: 10.25rem;
+  padding: 8rem 2rem;
+}
 
-  .content {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 20px;
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
 
-    .title {
-      font-size: 3rem;
-      text-align: center;
-    }
+.badge {
+  width: fit-content;
+  margin: 0 auto 1.5rem;
 
-    .subtitle {
-      font-size: 1.5rem;
-      margin-top: 2.72rem;
-      text-align: center;
-    }
+  padding: .45rem 1rem;
 
-    .projects {
-      margin-top: 5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 3rem;
-    }
-  }
+  border-radius: 999px;
+
+  background: rgba(59, 130, 246, .12);
+
+  color: #3b82f6;
+
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: .8;
+  margin-bottom: 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.project {
+  display: flex;
+}
+
+.featured {
+  grid-column: span 1;
 }
 
 .dark {
-  background-color: variables.$bg-dark;
+  background: variables.$bg-dark;
 
-  .content {
-    .title {
-      color: variables.$title-dark;
-    }
+  .title {
+    color: variables.$title-dark;
+  }
 
-    .subtitle {
-      color: variables.$subtitle-dark;
-    }
+  .subtitle {
+    color: variables.$subtitle-dark;
   }
 }
 
 .light {
-  background-color: variables.$bg-light;
+  background: variables.$bg-light;
 
-  .content {
-    .title {
-      color: variables.$title-light;
-    }
-
-    .subtitle {
-      color: variables.$subtitle-light;
-    }
+  .title {
+    color: variables.$title-light;
   }
+
+  .subtitle {
+    color: variables.$subtitle-light;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .container{
+    padding:6rem 1rem;
+  }
+
 }

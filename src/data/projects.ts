@@ -1,39 +1,129 @@
-import AG from '../public/preview-projects/a-g.png';
-import Calc from '../public/preview-projects/calculadora.png';
-import Task from '../public/preview-projects/tarefas.png';
-import LojaPreview from '../public/preview-projects/loja_preview.png';
+import AG from "../public/preview-projects/a-g.png";
+import Calc from "../public/preview-projects/calculadora.png";
+import Task from "../public/preview-projects/tarefas.png";
+import LojaPreview from "../public/preview-projects/loja_preview.png";
 
 export const projects = [
     {
         id: 1,
-        title: 'Loja Online MAG Seguros',
-        description: 'Esse é o projeto que eu venho atuando a mais de 5 anos. Sigo atuando nos canais de venda da MAG Seguros até os dias atuais.',
-        linkView: 'https://loja.mag.com.br/magpravoce',
-        linkCodeView: '',
-        imagePreview: LojaPreview
+
+        featured: true,
+
+        title: "MAG Seguros",
+
+        company: "MAG Seguros",
+
+        role: "Full Stack Developer",
+
+        period: "2020 - Atual",
+
+        description:
+            "Atuação no desenvolvimento e manutenção dos canais digitais da MAG Seguros, participando da evolução de aplicações utilizadas por milhares de clientes e corretores.",
+
+        technologies: [
+            "React",
+            "Angular",
+            "TypeScript",
+            "PHP",
+            "Laravel",
+            ".NET",
+            "SQL Server",
+        ],
+
+        website: "https://loja.mag.com.br/magpravoce",
+
+        github: null,
+
+        image: LojaPreview,
     },
+
     {
         id: 2,
-        title: 'A & G Construções',
-        description: 'Esse projeto foi criado para um cliente, o site é um portfólio da empresa de construção.',
-        linkView: 'https://a-g-construcoes.vercel.app/',
-        linkCodeView: '',
-        imagePreview: AG
+
+        featured: false,
+
+        title: "A & G Construções",
+
+        company: "Cliente",
+
+        role: "Frontend Developer",
+
+        period: "Freelancer",
+
+        description:
+            "Website institucional desenvolvido para apresentar os serviços da empresa, destacando projetos executados e facilitando o contato com novos clientes.",
+
+        technologies: [
+            "React",
+            "TypeScript",
+            "SCSS",
+            "Vercel",
+        ],
+
+        website: "https://a-g-construcoes.vercel.app/",
+
+        github: null,
+
+        image: AG,
     },
+
     {
         id: 3,
-        title: 'Calculadora Penal',
-        description: 'Esse projeto foi criado para calcular a pena dos presos no GTA RP. A cidade no qual eu jogava não havia uma calculadora decente então montei uma para o batalhão do norte.',
-        linkView: 'https://newcity-calculadora-penal.netlify.app/',
-        linkCodeView: 'https://github.com/Luiz-Suvilao/calculadora_penal',
-        imagePreview: Calc
+
+        featured: false,
+
+        title: "Calculadora Penal",
+
+        company: "Projeto Pessoal",
+
+        role: "Full Stack Developer",
+
+        period: "2023",
+
+        description:
+            "Aplicação criada para automatizar o cálculo de penas em servidores GTA RP, reduzindo erros manuais e agilizando o trabalho da equipe policial.",
+
+        technologies: [
+            "React",
+            "TypeScript",
+            "Firebase",
+        ],
+
+        website: "https://newcity-calculadora-penal.netlify.app/",
+
+        github: "https://github.com/Luiz-Suvilao/calculadora_penal",
+
+        image: Calc,
     },
+
     {
         id: 4,
-        title: 'Tasks',
-        description: 'Esse projeto foi criado com o objetivo de estudar Oauth, esse projeto possui login com Github ou com o Google. Basicamente trata-se de um gerenciador de tarefas pessoal. O banco de dados usado foi o firebase.',
-        linkView: 'https://digital-tarefas.vercel.app/',
-        linkCodeView: 'https://github.com/Luiz-Suvilao/tasks',
-        imagePreview: Task
-    }
-]
+
+        featured: false,
+
+        title: "Tasks",
+
+        company: "Projeto Pessoal",
+
+        role: "Full Stack Developer",
+
+        period: "2022",
+
+        description:
+            "Gerenciador de tarefas desenvolvido para estudar autenticação OAuth utilizando Google e GitHub, com persistência de dados em Firebase.",
+
+        technologies: [
+            "React",
+            "Firebase",
+            "OAuth",
+            "Google",
+            "GitHub",
+        ],
+
+        website: "https://digital-tarefas.vercel.app/",
+
+        github: "https://github.com/Luiz-Suvilao/tasks",
+
+        image: Task,
+    },
+];
