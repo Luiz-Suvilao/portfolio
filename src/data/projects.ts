@@ -1,6 +1,5 @@
 import AG from "../public/preview-projects/a-g.png";
-import Calc from "../public/preview-projects/calculadora.png";
-import Task from "../public/preview-projects/tarefas.png";
+import AJM from "../public/preview-projects/ajm.png";
 import LojaPreview from "../public/preview-projects/loja_preview.png";
 
 export const projects = [
@@ -42,6 +41,33 @@ export const projects = [
 
         featured: false,
 
+        title: "AJM Machine",
+
+        company: "Cliente",
+
+        role: "Frontend Developer",
+
+        period: "Freelancer",
+
+        description:
+            "Desenvolvimento de uma landing page responsiva para a AJM Machine, empresa especializada em soluções de vending machines.",
+
+        technologies: [
+            "Next.js",
+            "Tailwind CSS"
+        ],
+
+        website: "https://www.ajmmachine.com.br/",
+
+        image: AJM,
+
+    },
+
+    {
+        id: 3,
+
+        featured: false,
+
         title: "A & G Construções",
 
         company: "Cliente",
@@ -65,36 +91,5 @@ export const projects = [
         github: null,
 
         image: AG,
-    },
-
-    {
-        id: 3,
-
-        featured: false,
-
-        title: "Tasks",
-
-        company: "Projeto Pessoal",
-
-        role: "Full Stack Developer",
-
-        period: "2022",
-
-        description:
-            "Gerenciador de tarefas desenvolvido para estudar autenticação OAuth utilizando Google e GitHub, com persistência de dados em Firebase.",
-
-        technologies: [
-            "React",
-            "Firebase",
-            "OAuth",
-            "Google",
-            "GitHub",
-        ],
-
-        website: "https://digital-tarefas.vercel.app/",
-
-        github: "https://github.com/Luiz-Suvilao/tasks",
-
-        image: Task,
     },
 ];

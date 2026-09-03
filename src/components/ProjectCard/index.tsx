@@ -115,7 +115,7 @@ export default function ProjectCard({project}:Props){
                         target="_blank"
                     >
 
-                        Ver Projeto
+                        Visitar
 
                         <FaArrowRight/>
 
