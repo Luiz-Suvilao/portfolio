@@ -7,7 +7,7 @@ import { useTheme } from "../../hooks/theme";
 
 import styles from "./projectCard.module.scss";
 
-interface Project {
+export interface Project {
 
     id:number;
 
@@ -27,7 +27,7 @@ interface Project {
 
     website:string;
 
-    github:string | null;
+    github?:string | null;
 
     image:any;
 

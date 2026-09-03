@@ -1,8 +1,9 @@
 import AG from "../public/preview-projects/a-g.png";
 import AJM from "../public/preview-projects/ajm.png";
 import LojaPreview from "../public/preview-projects/loja_preview.png";
+import {Project} from "../components/ProjectCard";
 
-export const projects = [
+export const projects: Project[] = [
     {
         id: 1,
 
