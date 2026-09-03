@@ -13,7 +13,8 @@ import {
     SiRedux,
     SiSass,
     SiTypescript,
-    SiCss3
+    SiCss3,
+    SiFlutter
 } from "react-icons/si";
 
 export const techs = [
@@ -83,6 +84,14 @@ export const techs = [
     },
     {
         id: 9,
+        name: "Flutter",
+        icon: SiFlutter,
+        color: "rgb(19, 137, 253)",
+        category: "Mobile",
+        experience: "1 ano",
+    },
+    {
+        id: 10,
         name: "PHP",
         icon: SiPhp,
         color: "#777BB4",
@@ -90,7 +99,7 @@ export const techs = [
         experience: "5+ anos",
     },
     {
-        id: 10,
+        id: 11,
         name: "Laravel",
         icon: SiLaravel,
         color: "#FF2D20",
@@ -98,7 +107,7 @@ export const techs = [
         experience: "5+ anos",
     },
     {
-        id: 11,
+        id: 12,
         name: "C#",
         icon: SiCsharp,
         color: "#68217A",
@@ -106,7 +115,7 @@ export const techs = [
         experience: "5+ anos",
     },
     {
-        id: 12,
+        id: 13,
         name: ".NET",
         icon: SiDotnet,
         color: "#512BD4",
@@ -114,7 +123,7 @@ export const techs = [
         experience: "5+ anos",
     },
     {
-        id: 13,
+        id: 14,
         name: "Docker",
         icon: SiDocker,
         color: "#2496ED",
@@ -122,7 +131,7 @@ export const techs = [
         experience: "5+ anos",
     },
     {
-        id: 14,
+        id: 15,
         name: "Git",
         icon: SiGit,
         color: "#F05032",
@@ -130,7 +139,7 @@ export const techs = [
         experience: "5+ anos",
     },
     {
-        id: 15,
+        id: 16,
         name: "MySQL",
         icon: SiMysql,
         color: "#4479A1",
