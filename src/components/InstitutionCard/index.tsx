@@ -51,7 +51,7 @@ export default function InstitutionCard({
 
                     <h3>{role}</h3>
 
-                    <span>{company}</span>
+                    <span style={{ color: "#d9d9d9" }}>{company}</span>
 
                 </div>
 
