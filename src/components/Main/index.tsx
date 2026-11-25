@@ -1,141 +1,144 @@
-import React, { useEffect, useRef } from "react";
+import React, {useEffect, useRef} from "react";
 import Link from "next/link";
 
-import { gsap } from "gsap";
+import {gsap} from "gsap";
 
-import { useTheme } from "../../hooks/theme";
+import {useTheme} from "../../hooks/theme";
 
 import styles from "./main.module.scss";
 
 interface MainProps {
-    projectsRef: React.RefObject<HTMLDivElement>;
+	projectsRef: React.RefObject<HTMLDivElement>;
 }
 
-const Main = ({ projectsRef }: MainProps) => {
+const Main = ({projectsRef}: MainProps) => {
 
-    const { isDarkTheme } = useTheme();
+	const {isDarkTheme} = useTheme();
 
-    const hero = useRef<HTMLDivElement>(null);
+	const hero = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
+	useEffect(() => {
 
-        const ctx = gsap.context(() => {
+		const ctx = gsap.context(() => {
 
-            gsap.from(`.${styles.badge}`, {
-                y: 30,
-                opacity: 0,
-                duration: .6
-            });
+			gsap.from(`.${styles.badge}`, {
+				y: 30,
+				opacity: 0,
+				duration: .6
+			});
 
-            gsap.from(`.${styles.title}`, {
-                y: 40,
-                opacity: 0,
-                duration: .8,
-                delay: .2
-            });
+			gsap.from(`.${styles.title}`, {
+				y: 40,
+				opacity: 0,
+				duration: .8,
+				delay: .2
+			});
 
-            gsap.from(`.${styles.subtitle}`, {
-                y: 40,
-                opacity: 0,
-                duration: .8,
-                delay: .35
-            });
+			gsap.from(`.${styles.subtitle}`, {
+				y: 40,
+				opacity: 0,
+				duration: .8,
+				delay: .35
+			});
 
-            gsap.from(`.${styles.actions}`, {
-                y: 40,
-                opacity: 0,
-                duration: .8,
-                delay: .5
-            });
+			gsap.from(`.${styles.actions}`, {
+				y: 40,
+				opacity: 0,
+				duration: .8,
+				delay: .5
+			});
 
-            gsap.from(`.${styles.stackList}`, {
-                y: 30,
-                opacity: 0,
-                duration: .8,
-                delay: .7
-            });
+			gsap.from(`.${styles.stackList}`, {
+				y: 30,
+				opacity: 0,
+				duration: .8,
+				delay: .7
+			});
 
-            gsap.from(`.${styles.photoContainer}`, {
-                x: 80,
-                opacity: 0,
-                duration: 1
-            });
+			gsap.from(`.${styles.photoContainer}`, {
+				x: 80,
+				opacity: 0,
+				duration: 1
+			});
 
-        }, hero);
+		}, hero);
 
-        return () => ctx.revert();
+		return () => ctx.revert();
 
-    }, []);
+	}, []);
 
-    return (
-        <main
-            ref={hero}
-            className={`${styles.container} ${
-                isDarkTheme ? styles.dark : styles.light
-            }`}
-        >
-            <div className={styles.content}>
+	return (
+		<main
+			ref={hero}
+			className={`${styles.container} ${
+				isDarkTheme ? styles.dark : styles.light
+			}`}
+		>
+			<div className={styles.content}>
 
-                <section className={styles.left}>
+				<section className={styles.left}>
 
                     <span className={styles.badge}>
                         👋 Olá, eu sou
                     </span>
 
-                    <h1 className={styles.title}>
-                        Luiz Filipe
-                    </h1>
+					<h1 className={styles.title}>
+						Luiz Filipe
+					</h1>
 
-                    <h2 className={styles.subtitle}>
-                        Full Stack Developer
-                    </h2>
+					<h2 className={styles.subtitle}>
+						Desenvolvedor Backend & Full Stack
+					</h2>
 
-                    <p className={styles.description}>
-                        Desenvolvendo aplicações modernas,
-                        performáticas e escaláveis utilizando
-                        React, Angular, Laravel e .NET.
-                    </p>
+					<p className={styles.description}>
+						Desenvolvedor Full Stack com mais de 6 anos de experiência no desenvolvimento de aplicações web,
+						APIs REST e integrações entre sistemas. Tenho experiência na construção e manutenção de soluções
+						em produção, utilizando tecnologias como Laravel, .NET, React e Angular, além de ferramentas
+						como Docker e Git. Busco desenvolver soluções escaláveis, eficientes e alinhadas às necessidades
+						do negócio.
+					</p>
 
-                    <div className={styles.actions}>
+					<div className={styles.actions}>
 
-                        <button
-                            onClick={() =>
-                                projectsRef.current?.scrollIntoView({
-                                    behavior: "smooth"
-                                })
-                            }
-                        >
-                            Ver Projetos
-                        </button>
+						<button
+							onClick={() =>
+								projectsRef.current?.scrollIntoView({
+									behavior: "smooth"
+								})
+							}
+						>
+							Ver Projetos
+						</button>
 
-                        {/*<Link href="/curriculo.pdf" target="_blank">*/}
-                        {/*    Download CV*/}
-                        {/*</Link>*/}
+						{/*<Link href="/curriculo.pdf" target="_blank">*/}
+						{/*    Download CV*/}
+						{/*</Link>*/}
 
-                    </div>
+					</div>
 
-                    <div className={styles.stackList}>
-                        <span>React</span>
-                        <span>Angular</span>
-                        <span>Laravel</span>
-                        <span>.NET</span>
-                        <span>Docker</span>
-                    </div>
+					<div className={styles.stackList}>
+						<span>APIs REST</span>
+						<span>Python</span>
+						<span>Laravel</span>
+						<span>.NET</span>
+						<span>Docker</span>
+						<span>Git</span>
+					</div>
 
-                </section>
+				</section>
 
-                <section className={styles.photoContainer}>
+				<section className={styles.photoContainer}>
 
-                    <div className={styles.glow}></div>
+					<div className={styles.glow}></div>
 
-                    <div className={styles.photo}></div>
+					<div className={styles.photo}></div>
 
-                </section>
+				</section>
 
-            </div>
+			</div>
 
-        </main>
-    );
+		</main>
+	);
 };
 
 export default Main;

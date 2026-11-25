@@ -9,6 +9,7 @@ import {
     SiLaravel,
     SiMysql,
     SiPhp,
+    SiPython,
     SiReact,
     SiRedux,
     SiSass,
@@ -97,6 +98,14 @@ export const techs = [
         color: "#777BB4",
         category: "Backend",
         experience: "5+ anos",
+    },
+    {
+        id: 17,
+        name: "Python",
+        icon: SiPython,
+        color: "#FFD43B",
+        category: "Backend",
+        experience: "Projetos pessoais",
     },
     {
         id: 11,

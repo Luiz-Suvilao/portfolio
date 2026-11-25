@@ -28,8 +28,8 @@ const WorkExperience = () => {
                 </h2>
 
                 <p className={styles.subtitle}>
-                    Mais de 6 anos desenvolvendo aplicações web completas,
-                    desde APIs até interfaces modernas para produtos em produção.
+                    Mais de 6 anos desenvolvendo aplicações web em produção,
+                    APIs REST e integrações entre sistemas.
                 </p>
 
                 <div className={styles.timeline}>

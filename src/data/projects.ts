@@ -61,24 +61,5 @@ export const projects: Project[] = [
 		],
 		website: "https://www.ajmmachine.com.br/",
 		image: AJM,
-	},
-	{
-		id: 4,
-		featured: false,
-		title: "A & G Construções",
-		company: "Cliente",
-		role: "Frontend Developer",
-		period: "Freelancer",
-		description:
-			"Website institucional desenvolvido para apresentar os serviços da empresa, destacando projetos executados e facilitando o contato com novos clientes.",
-		technologies: [
-			"React",
-			"TypeScript",
-			"SCSS",
-			"Vercel",
-		],
-		website: "https://a-g-construcoes.vercel.app/",
-		github: null,
-		image: AG,
 	}
 ];

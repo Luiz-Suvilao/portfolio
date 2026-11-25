@@ -68,20 +68,22 @@ const AboutMe = ({ sectionRef }) => {
                     </span>
 
                     <h2 className={styles.title}>
-                        Desenvolvedor Full Stack apaixonado por criar soluções.
+                        Desenvolvedor com foco em backend, integrações e produtos web.
                     </h2>
 
                     <p className={styles.description}>
                         Trabalho com desenvolvimento web há mais de 6 anos,
-                        construindo aplicações completas desde APIs robustas
-                        até interfaces modernas utilizando React, Angular,
-                        Laravel e .NET.
+                        construindo e mantendo aplicações em produção. Tenho
+                        experiência com desenvolvimento e integração de APIs REST,
+                        regras de negócio e interfaces utilizando Laravel, .NET,
+                        React e Angular. Também desenvolvo projetos pessoais
+                        com Python.
 
                         <br /><br />
 
-                        Gosto de escrever código limpo, buscar boas práticas,
-                        resolver problemas complexos e criar produtos que
-                        realmente entreguem valor ao usuário.
+                        Também trabalho com Docker e Git no fluxo diário. Valorizo
+                        código sustentável, boas práticas de engenharia e soluções
+                        que atendam necessidades reais do negócio.
                     </p>
 
                 </div>

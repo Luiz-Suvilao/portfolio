@@ -62,8 +62,8 @@ const Stacks = () => {
                 </h2>
 
                 <p className={styles.subtitle}>
-                    Tecnologias que utilizo diariamente para construir
-                    aplicações escaláveis, performáticas e modernas.
+                    Experiência prática em desenvolvimento web, backend,
+                    integração de APIs e entrega de aplicações.
                 </p>
 
                 <div className={styles.grid}>
